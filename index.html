@@ -1,1 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Free QR Code Generator</title>
+  <meta name="description" content="Create free QR codes instantly. Generate QR codes for URLs, text, Wi-Fi and more. Download your QR code as an image.">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f7fb;
+      color: #172033;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 18px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 24px;
+      color: #2563eb;
+    }
+
+    header p {
+      margin-top: 6px;
+      color: #667085;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 650px;
+      margin: 35px auto;
+      padding: 0 18px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 120px;
+      padding: 14px;
+      border: 1px solid #d0d5dd;
+      border-radius: 10px;
+      font-size: 16px;
+      resize: vertical;
+      outline: none;
+    }
+
+    textarea:focus {
+      border-color: #2563eb;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 15px;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      background: #2563eb;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    #result {
+      display: none;
+      text-align: center;
+      margin-top: 28px;
+      padding-top: 25px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    #qrcode {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    #downloadBtn {
+      background: #111827;
+    }
+
+    .info {
+      margin-top: 25px;
+      color: #667085;
+      font-size: 14px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #667085;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Free QR Code Generator</h1>
+    <p>Create and download QR codes instantly</p>
+  </header>
+
+  <main class="container">
+    <div class="card">
+
+      <label for="text">Enter text or URL</label>
+
+      <textarea
+        id="text"
+        placeholder="Enter a website URL, text, phone number, etc."
+      ></textarea>
+
+      <button onclick="generateQR()">Generate QR Code</button>
+
+      <div id="result">
+        <h2>Your QR Code</h2>
+
+        <div id="qrcode"></div>
+
+        <button id="downloadBtn" onclick="downloadQR()">
+          Download QR Code
+        </button>
+      </div>
+
+      <div class="info">
+        Create QR codes for websites, text, contact information and more.
+        No registration required.
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    © 2026 Free QR Code Generator
+  </footer>
+
+  <script>
+    let qr;
+
+    function generateQR() {
+      const text = document.getElementById("text").value.trim();
+
+      if (!text) {
+        alert("Please enter some text or a URL.");
+        return;
+      }
+
+      document.getElementById("qrcode").innerHTML = "";
+
+      qr = new QRCode(document.getElementById("qrcode"), {
+        text: text,
+        width: 220,
+        height: 220,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+      });
+
+      document.getElementById("result").style.display = "block";
+    }
+
+    function downloadQR() {
+      const img = document.querySelector("#qrcode img");
+      const canvas = document.querySelector("#qrcode canvas");
+
+      let imageURL;
+
+      if (img) {
+        imageURL = img.src;
+      } else if (canvas) {
+        imageURL = canvas.toDataURL("image/png");
+      }
+
+      if (imageURL) {
+        const link = document.createElement("a");
+        link.href = imageURL;
+        link.download = "qr-code.png";
+        link.click();
+      }
+    }
+  </script>
+
+</body>
+  </html>
