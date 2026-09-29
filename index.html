@@ -194,25 +194,23 @@
     }
 
     function downloadQR() {
-      const img = document.querySelector("#qrcode img");
-      const canvas = document.querySelector("#qrcode canvas");
+  const canvas = document.querySelector("#qrcode canvas");
 
-      let imageURL;
+  if (!canvas) {
+    alert("Please generate a QR code first.");
+    return;
+  }
 
-      if (img) {
-        imageURL = img.src;
-      } else if (canvas) {
-        imageURL = canvas.toDataURL("image/png");
-      }
+  canvas.toBlob(function(blob) {
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
 
-      if (imageURL) {
-        const link = document.createElement("a");
-        link.href = imageURL;
-        link.download = "qr-code.png";
-        link.click();
-      }
+    link.href = url;
+    link.download = "qr-code.png";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    URL.revokeObjectURL(url);
+  }, "image/png");
     }
-  </script>
-
-</body>
-  </html>
