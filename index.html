@@ -4,16 +4,106 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Google Search Console Verification - DO NOT CHANGE -->
   <meta name="google-site-verification" content="IVNFZ31XeO8_iYXkL1IY5yD9nBt83zH_iXrpHe8g244" />
 
   <title>Free QR Code Generator - Create QR Codes Online</title>
 
   <meta
     name="description"
-    content="Create free QR codes online instantly. Generate QR codes for websites, text, contact information and more. Download your QR code for free."
+    content="Create free QR codes online instantly. Generate QR codes for websites, text, contact information and more. Download your QR code as a PNG image for free."
   >
 
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://qr-code-generator-4yc.pages.dev/">
+
+  <meta property="og:title" content="Free QR Code Generator - Create QR Codes Online">
+  <meta
+    property="og:description"
+    content="Create and download QR codes online for free. Generate QR codes for websites, text, contact information and more."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://qr-code-generator-4yc.pages.dev/">
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Free QR Code Generator",
+    "url": "https://qr-code-generator-4yc.pages.dev/",
+    "description": "A free online QR code generator for creating QR codes for websites, text, contact information and more.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is this QR code generator free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can create and download QR codes for free without registration."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to register?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. You do not need to create an account or register to generate a QR code."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What can I put into a QR code?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can create QR codes for URLs, text, contact information, business information, event information and other supported text-based content."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I download my QR code?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. After generating your QR code, you can download it as a PNG image."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the QR code expire?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The QR code itself does not have an expiration date. It contains the information you entered when it was generated."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use QR codes for websites?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Enter a website URL and generate a QR code that can be scanned to open the link."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this QR code generator work on mobile devices?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The QR code generator is designed to work on modern mobile phones, tablets and desktop browsers."
+        }
+      }
+    ]
+  }
+  </script>
 
   <style>
     * {
@@ -22,23 +112,28 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: #f4f7fb;
       color: #172033;
       min-height: 100vh;
+      line-height: 1.6;
     }
 
     header {
       background: #ffffff;
       border-bottom: 1px solid #e5e7eb;
-      padding: 22px 16px;
+      padding: 28px 16px;
       text-align: center;
     }
 
     header h1 {
       color: #2563eb;
-      font-size: 28px;
+      font-size: 30px;
       margin-bottom: 8px;
     }
 
@@ -49,7 +144,7 @@
 
     .container {
       width: 100%;
-      max-width: 700px;
+      max-width: 760px;
       margin: 35px auto;
       padding: 0 16px;
     }
@@ -83,6 +178,7 @@
       font-size: 16px;
       line-height: 1.5;
       resize: vertical;
+      font-family: inherit;
     }
 
     textarea:focus {
@@ -104,6 +200,12 @@
       font-size: 16px;
       font-weight: bold;
       cursor: pointer;
+      font-family: inherit;
+    }
+
+    button:focus-visible {
+      outline: 3px solid rgba(37, 99, 235, 0.35);
+      outline-offset: 2px;
     }
 
     .generate-btn {
@@ -143,6 +245,7 @@
       background: #ffffff;
       padding: 15px;
       min-height: 250px;
+      overflow: hidden;
     }
 
     #qrcode img {
@@ -201,6 +304,80 @@
       color: #475467;
     }
 
+    .content-section {
+      margin-top: 28px;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .content-section h2 {
+      font-size: 21px;
+      margin-bottom: 12px;
+      color: #172033;
+    }
+
+    .content-section h3 {
+      font-size: 17px;
+      margin: 18px 0 8px;
+      color: #2563eb;
+    }
+
+    .content-section p {
+      color: #475467;
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .content-section ol,
+    .content-section ul {
+      padding-left: 22px;
+      color: #475467;
+      font-size: 15px;
+    }
+
+    .content-section li {
+      margin-bottom: 7px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #eaecf0;
+      padding: 16px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .faq-question {
+      font-weight: bold;
+      font-size: 16px;
+      color: #172033;
+      margin-bottom: 6px;
+    }
+
+    .faq-answer {
+      color: #667085;
+      font-size: 14px;
+    }
+
+    .legal-links {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .legal-links a {
+      color: #2563eb;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    .legal-links a:hover {
+      text-decoration: underline;
+    }
+
     footer {
       text-align: center;
       padding: 30px 15px;
@@ -213,6 +390,10 @@
         font-size: 24px;
       }
 
+      .container {
+        margin-top: 25px;
+      }
+
       .card {
         padding: 20px;
       }
@@ -223,6 +404,10 @@
 
       .features {
         grid-template-columns: 1fr;
+      }
+
+      .content-section {
+        padding: 20px;
       }
     }
   </style>
@@ -246,6 +431,7 @@
       <textarea
         id="qrText"
         placeholder="Example: https://example.com"
+        aria-label="Text or URL for QR code"
       ></textarea>
 
       <div class="button-group">
@@ -266,7 +452,7 @@
         </button>
       </div>
 
-      <div id="message" class="message"></div>
+      <div id="message" class="message" role="alert"></div>
 
       <div id="result" class="result">
 
@@ -303,6 +489,132 @@
         </div>
       </div>
 
+    </div>
+
+    <section class="content-section">
+      <h2>Free QR Code Generator</h2>
+
+      <p>
+        Create a QR code online quickly and easily with our free QR code
+        generator. Enter a website URL, text, contact information or other
+        supported content and generate your QR code instantly.
+      </p>
+
+      <p>
+        You can download the generated QR code as a PNG image and use it
+        wherever you need a simple way to share information.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>How to Create a QR Code</h2>
+
+      <ol>
+        <li>Enter your text, website URL or other information in the box above.</li>
+        <li>Click the "Generate QR Code" button.</li>
+        <li>Your QR code will appear instantly.</li>
+        <li>Click "Download QR Code" to save it as a PNG image.</li>
+      </ol>
+    </section>
+
+    <section class="content-section">
+      <h2>What Is a QR Code?</h2>
+
+      <p>
+        A QR code is a two-dimensional code that can store information such
+        as website links, text and other data. Smartphones and other devices
+        can scan QR codes to quickly access the information they contain.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>What Can You Use a QR Code For?</h2>
+
+      <ul>
+        <li>Sharing website URLs</li>
+        <li>Sharing text and information</li>
+        <li>Providing contact information</li>
+        <li>Sharing business information</li>
+        <li>Sharing event information</li>
+        <li>Providing quick access to online links</li>
+      </ul>
+    </section>
+
+    <section class="content-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Is this QR code generator free?
+        </div>
+        <div class="faq-answer">
+          Yes. You can create and download QR codes for free without registration.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Do I need to register?
+        </div>
+        <div class="faq-answer">
+          No. You do not need to create an account or register to generate a QR code.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          What can I put into a QR code?
+        </div>
+        <div class="faq-answer">
+          You can create QR codes for URLs, text, contact information,
+          business information, event information and other supported text-based content.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Can I download my QR code?
+        </div>
+        <div class="faq-answer">
+          Yes. After generating your QR code, you can download it as a PNG image.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Does the QR code expire?
+        </div>
+        <div class="faq-answer">
+          The QR code itself does not have an expiration date. It contains
+          the information you entered when it was generated.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Can I use QR codes for websites?
+        </div>
+        <div class="faq-answer">
+          Yes. Enter a website URL and generate a QR code that can be scanned
+          to open the link.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Does this QR code generator work on mobile devices?
+        </div>
+        <div class="faq-answer">
+          Yes. The QR code generator is designed to work on modern mobile
+          phones, tablets and desktop browsers.
+        </div>
+      </div>
+
+    </section>
+
+    <div class="legal-links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
     </div>
 
   </main>
@@ -405,4 +717,4 @@
   </script>
 
 </body>
-</html>
+      </html>
