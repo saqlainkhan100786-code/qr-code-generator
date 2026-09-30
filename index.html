@@ -146,6 +146,53 @@
       font-size: 15px;
     }
 
+    /* =========================
+       ADVERTISEMENT SLOT STYLES
+       ========================= */
+
+    .ad-slot {
+      width: 100%;
+      max-width: 760px;
+      min-height: 110px;
+      margin: 22px auto;
+      padding: 10px 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .ad-placeholder {
+      width: 100%;
+      min-height: 90px;
+      border: 2px dashed #cbd5e1;
+      border-radius: 12px;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #64748b;
+    }
+
+    .ad-placeholder strong {
+      color: #475569;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    .ad-placeholder span {
+      margin-top: 4px;
+      font-size: 12px;
+    }
+
+    .ad-code {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     .container {
       width: 100%;
       max-width: 760px;
@@ -389,6 +436,12 @@
       font-size: 13px;
     }
 
+    /* Social Bar placeholder */
+    .social-bar-slot {
+      width: 100%;
+      min-height: 1px;
+    }
+
     @media (max-width: 600px) {
       header h1 {
         font-size: 24px;
@@ -413,6 +466,15 @@
       .content-section {
         padding: 20px;
       }
+
+      .ad-slot {
+        padding: 8px 12px;
+        min-height: 90px;
+      }
+
+      .ad-placeholder {
+        min-height: 70px;
+      }
     }
   </style>
 </head>
@@ -423,6 +485,26 @@
     <h1>Free QR Code Generator</h1>
     <p>Create and download QR codes instantly</p>
   </header>
+
+
+  <!-- =========================================
+       ADVERTISEMENT SLOT 1
+       Replace the placeholder with Adsterra code
+       ========================================= -->
+
+  <div class="ad-slot" id="ad-slot-1">
+
+    <div class="ad-placeholder" id="ad-placeholder-1">
+      <strong>ADVERTISEMENT — SLOT 1</strong>
+      <span>Ad will appear here</span>
+    </div>
+
+    <div class="ad-code" id="ad-code-1">
+      <!-- PASTE ADSTERRA BANNER 1 CODE HERE -->
+    </div>
+
+  </div>
+
 
   <main class="container">
 
@@ -439,6 +521,7 @@
       ></textarea>
 
       <div class="button-group">
+
         <button
           class="generate-btn"
           type="button"
@@ -454,6 +537,7 @@
         >
           Clear
         </button>
+
       </div>
 
       <div id="message" class="message" role="alert"></div>
@@ -480,6 +564,7 @@
       </div>
 
       <div class="features">
+
         <div class="feature">
           ✓ Free to Use
         </div>
@@ -491,11 +576,33 @@
         <div class="feature">
           ✓ Download QR Code
         </div>
+
       </div>
 
     </div>
 
+
+    <!-- =========================================
+         ADVERTISEMENT SLOT 2
+         Replace the placeholder with Adsterra code
+         ========================================= -->
+
+    <div class="ad-slot" id="ad-slot-2">
+
+      <div class="ad-placeholder" id="ad-placeholder-2">
+        <strong>ADVERTISEMENT — SLOT 2</strong>
+        <span>Ad will appear here</span>
+      </div>
+
+      <div class="ad-code" id="ad-code-2">
+        <!-- PASTE ADSTERRA BANNER 2 CODE HERE -->
+      </div>
+
+    </div>
+
+
     <section class="content-section">
+
       <h2>Free QR Code Generator</h2>
 
       <p>
@@ -509,9 +616,12 @@
         You can download the generated QR code as a PNG image and use it
         wherever you need a convenient way to share information.
       </p>
+
     </section>
 
+
     <section class="content-section">
+
       <h2>How to Create a QR Code Online</h2>
 
       <ol>
@@ -520,9 +630,12 @@
         <li>Your QR code will appear instantly.</li>
         <li>Click "Download QR Code" to save it as a PNG image.</li>
       </ol>
+
     </section>
 
+
     <section class="content-section">
+
       <h2>What Is a QR Code?</h2>
 
       <p>
@@ -535,9 +648,12 @@
         QR codes are commonly used to share websites, contact details,
         business information, event information and other digital content.
       </p>
+
     </section>
 
+
     <section class="content-section">
+
       <h2>What Can You Use a QR Code For?</h2>
 
       <ul>
@@ -548,182 +664,293 @@
         <li>Sharing event information</li>
         <li>Providing quick access to online links</li>
       </ul>
+
     </section>
 
+
     <section class="content-section">
+
       <h2>Frequently Asked Questions</h2>
 
       <div class="faq-item">
+
         <div class="faq-question">
           Is this QR code generator free?
         </div>
+
         <div class="faq-answer">
           Yes. You can create and download QR codes for free without registration.
         </div>
+
       </div>
 
+
       <div class="faq-item">
+
         <div class="faq-question">
           Do I need to register?
         </div>
+
         <div class="faq-answer">
           No. You do not need to create an account or register to generate a QR code.
         </div>
+
       </div>
 
+
       <div class="faq-item">
+
         <div class="faq-question">
           What can I put into a QR code?
         </div>
+
         <div class="faq-answer">
           You can create QR codes for URLs, text, contact information,
           business information, event information and other supported text-based content.
         </div>
+
       </div>
 
+
       <div class="faq-item">
+
         <div class="faq-question">
           Can I download my QR code?
         </div>
+
         <div class="faq-answer">
           Yes. After generating your QR code, you can download it as a PNG image.
         </div>
+
       </div>
 
+
       <div class="faq-item">
+
         <div class="faq-question">
           Does the QR code expire?
         </div>
+
         <div class="faq-answer">
           The QR code itself does not have an expiration date. It contains
           the information you entered when it was generated.
         </div>
+
       </div>
 
+
       <div class="faq-item">
+
         <div class="faq-question">
           Can I use QR codes for websites?
         </div>
+
         <div class="faq-answer">
           Yes. Enter a website URL and generate a QR code that can be scanned
           to open the link.
         </div>
+
       </div>
 
+
       <div class="faq-item">
+
         <div class="faq-question">
           Does this QR code generator work on mobile devices?
         </div>
+
         <div class="faq-answer">
           Yes. The QR code generator is designed to work on modern mobile
           phones, tablets and desktop browsers.
         </div>
+
       </div>
 
     </section>
 
+
     <div class="legal-links">
+
       <a href="privacy-policy.html">Privacy Policy</a>
+
       <a href="terms.html">Terms of Use</a>
+
     </div>
 
   </main>
+
+
+  <!-- =========================================
+       SOCIAL BAR
+       Adsterra Social Bar code can be placed here
+       ========================================= -->
+
+  <div class="social-bar-slot" id="social-bar-slot">
+    <!-- PASTE ADSTERRA SOCIAL BAR CODE HERE -->
+  </div>
+
 
   <footer>
     © 2026 Free QR Code Generator
   </footer>
 
+
   <script>
+
     let qrCode = null;
 
+
     function showMessage(text) {
+
       const message = document.getElementById("message");
 
       message.textContent = text;
+
       message.style.display = "block";
+
     }
 
+
     function hideMessage() {
+
       const message = document.getElementById("message");
 
       message.textContent = "";
+
       message.style.display = "none";
+
     }
 
+
     function generateQR() {
+
       hideMessage();
 
       const input = document.getElementById("qrText");
+
       const text = input.value.trim();
 
+
       if (text === "") {
+
         showMessage("Please enter some text or a URL first.");
+
         return;
+
       }
 
+
       const qrContainer = document.getElementById("qrcode");
+
       const result = document.getElementById("result");
+
 
       qrContainer.innerHTML = "";
 
+
       if (typeof QRCode === "undefined") {
+
         showMessage("QR Code library could not load. Please refresh the page.");
+
         return;
+
       }
 
+
       qrCode = new QRCode(qrContainer, {
+
         text: text,
+
         width: 250,
+
         height: 250,
+
         colorDark: "#000000",
+
         colorLight: "#ffffff",
+
         correctLevel: QRCode.CorrectLevel.H
+
       });
 
+
       result.style.display = "block";
+
     }
 
+
     function downloadQR() {
+
       hideMessage();
+
 
       const canvas = document.querySelector("#qrcode canvas");
 
+
       if (!canvas) {
+
         showMessage("Please generate a QR code first.");
+
         return;
+
       }
 
+
       canvas.toBlob(function(blob) {
+
         if (!blob) {
+
           showMessage("Download failed. Please try again.");
+
           return;
+
         }
 
+
         const url = URL.createObjectURL(blob);
+
         const link = document.createElement("a");
 
+
         link.href = url;
+
         link.download = "qr-code.png";
 
+
         document.body.appendChild(link);
+
         link.click();
+
         document.body.removeChild(link);
 
+
         setTimeout(function() {
+
           URL.revokeObjectURL(url);
+
         }, 1000);
+
       }, "image/png");
+
     }
 
+
     function clearQR() {
+
       document.getElementById("qrText").value = "";
+
       document.getElementById("qrcode").innerHTML = "";
+
       document.getElementById("result").style.display = "none";
+
 
       hideMessage();
 
+
       qrCode = null;
+
     }
+
   </script>
 
 </body>
