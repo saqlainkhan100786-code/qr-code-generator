@@ -197,6 +197,15 @@
       color: #64748b;
     }
 
+    /* Placeholder hidden by default; shown by script only when no ad is loaded */
+    .ad-placeholder {
+      display: none;
+    }
+
+    .ad-placeholder.show-placeholder {
+      display: flex;
+    }
+
     .ad-placeholder strong {
       color: #475569;
       font-size: 14px;
@@ -837,6 +846,42 @@
     let qrCode = null;
 
 
+    /* Show the "ADVERTISEMENT" placeholder only when no ad is loaded */
+    function updateAdPlaceholders() {
+
+      [1, 2].forEach(function(n) {
+
+        const code = document.getElementById("ad-code-" + n);
+
+        const placeholder = document.getElementById("ad-placeholder-" + n);
+
+        if (!code || !placeholder) return;
+
+        const hasAd = code.querySelector("iframe, ins, img, a, div, object, embed") !== null;
+
+        placeholder.classList.toggle("show-placeholder", !hasAd);
+
+      });
+
+    }
+
+    window.addEventListener("load", function() {
+
+      let checks = 0;
+
+      const timer = setInterval(function() {
+
+        updateAdPlaceholders();
+
+        checks++;
+
+        if (checks >= 15) clearInterval(timer);
+
+      }, 1000);
+
+    });
+
+
     function showMessage(text) {
 
       const message = document.getElementById("message");
@@ -974,7 +1019,7 @@
 
     function clearQR() {
 
-            document.getElementById("qrText").value = "";
+      document.getElementById("qrText").value = "";
 
       document.getElementById("qrcode").innerHTML = "";
 
